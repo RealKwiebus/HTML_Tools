@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaning Title - Kwiebus</title>
+    <script>
+        const originalTitle = document.title;
+    
+        document.addEventListener('visibilitychange', function() {
+          if (document.hidden) {
+            document.title = "Google";
+          } else {
+            document.title = originalTitle;
+          }
+        });
+      </script>
+</head>
+<body>
+    <h1>If you leave this page you can see the title changing</h1>
+</body>

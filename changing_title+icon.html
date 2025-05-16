@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changing Title + Icon</title>
+    <link id="favicon" rel="icon" type="image/ico" href="https://en.wikipedia.org/static/favicon/wikipedia.ico">
+    <script>
+        const originalTitle = document.title;
+        const originalFavicon = "https://en.wikipedia.org/static/favicon/wikipedia.ico";
+        const hiddenFavicon = "https://www.google.com/favicon.ico";
+        
+        // Change both title and favicon when visibility changes
+        document.addEventListener('visibilitychange', function() {
+          const favicon = document.getElementById('favicon');
+          
+          if (document.hidden) {
+            document.title = "Google";
+            favicon.href = hiddenFavicon;
+          } else {
+            document.title = originalTitle;
+            favicon.href = originalFavicon;
+          }
+        });
